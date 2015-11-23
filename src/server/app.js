@@ -2,16 +2,29 @@
 'use strict';
 
 var express = require('express');
+var passport = require('passport');
 var mongoose = require('mongoose');
 var bodyParser = require('body-parser');
 var favicon = require('serve-favicon');
 var logger = require('morgan');
 var port = process.env.PORT || 8001;
 var four0four = require('./utils/404')();
+var localStrategy = require('./services/localStrategy.js');
 
 var environment = process.env.NODE_ENV;
 
 var app = express();
+
+app.use(passport.initialize());
+
+passport.serializeUser(function (user, done) {
+    done(null, user.id);
+});
+
+passport.use('local-register', localStrategy.register);
+passport.use('local-login', localStrategy.login);
+
+
 app.use(function(req, res, next) {
 	   res.header('Access-Control-Allow-Origin', '*');
 	   res.header('Access-Control-Allow-Methods', 'GET,PUT,POST,DELETE');

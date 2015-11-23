@@ -30,5 +30,30 @@
         exceptionHandlerProvider.configure(config.appErrorPrefix);
         routerHelperProvider.configure({docTitle: config.appTitle + ': '});
     }
+    
+    
+    core.config(authConfig);
+    
+    authConfig.$inject = ['$httpProvider', '$authProvider'];
+    /* @ngInject */
+    function authConfig($httpProvider, $authProvider){
+        $authProvider.loginUrl = '/api/login';
+        $authProvider.signupUrl = '/api/register';
+        
+        // $authProvider.google({
+		//   clientId: '755194447289-i6qu5n18jnh4lhph17j19cq08i0fq6f4.apps.googleusercontent.com',
+		//   url: '/api/' + 'auth/google'
+	    // });
+
+	    // $authProvider.facebook({
+		//   clientId: '698580886903269',
+		//   url: '/api/' + 'auth/facebook'
+	    // });
+        
+        
+        $httpProvider.interceptors.push('authInterceptor');
+    }
+    
+    core.config
 
 })();

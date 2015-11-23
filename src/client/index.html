@@ -51,6 +51,8 @@
     <script src="/bower_components/toastr/toastr.js"></script>
     <script src="/bower_components/angular-animate/angular-animate.js"></script>
     <script src="/bower_components/angular-bootstrap/ui-bootstrap-tpls.js"></script>
+    <script src="/bower_components/angular-messages/angular-messages.js"></script>
+    <script src="/bower_components/satellizer/satellizer.js"></script>
     <!-- endbower -->
     <!-- endbuild -->
 
@@ -63,7 +65,10 @@
     <script src="/src/client/app/blocks/router/router.module.js"></script>
     <script src="/src/client/app/core/core.module.js"></script>
     <script src="/src/client/app/layout/layout.module.js"></script>
+    <script src="/src/client/app/login/login.module.js"></script>
+    <script src="/src/client/app/logout/logout.module.js"></script>
     <script src="/src/client/app/pets/pets.module.js"></script>
+    <script src="/src/client/app/register/register.module.js"></script>
     <script src="/src/client/app/widgets/widgets.module.js"></script>
     <script src="/src/client/app/admin/admin.controller.js"></script>
     <script src="/src/client/app/admin/admin.route.js"></script>
@@ -71,16 +76,26 @@
     <script src="/src/client/app/blocks/exception/exception.js"></script>
     <script src="/src/client/app/blocks/logger/logger.js"></script>
     <script src="/src/client/app/blocks/router/router-helper.provider.js"></script>
+    <script src="/src/client/app/core/auth.js"></script>
+    <script src="/src/client/app/core/authInterceptor.js"></script>
+    <script src="/src/client/app/core/authToken.js"></script>
     <script src="/src/client/app/core/config.js"></script>
     <script src="/src/client/app/core/constants.js"></script>
+    <script src="/src/client/app/core/core.directives.js"></script>
     <script src="/src/client/app/core/core.route.js"></script>
     <script src="/src/client/app/core/dataservice.js"></script>
     <script src="/src/client/app/layout/ht-sidebar.directive.js"></script>
     <script src="/src/client/app/layout/ht-top-nav.directive.js"></script>
     <script src="/src/client/app/layout/shell.controller.js"></script>
     <script src="/src/client/app/layout/sidebar.controller.js"></script>
+    <script src="/src/client/app/login/login.controller.js"></script>
+    <script src="/src/client/app/login/login.routes.js"></script>
+    <script src="/src/client/app/logout/logout.controller.js"></script>
+    <script src="/src/client/app/logout/logout.routes.js"></script>
     <script src="/src/client/app/pets/pets.controller.js"></script>
     <script src="/src/client/app/pets/pets.route.js"></script>
+    <script src="/src/client/app/register/register.controller.js"></script>
+    <script src="/src/client/app/register/register.route.js"></script>
     <script src="/src/client/app/widgets/ht-img-person.directive.js"></script>
     <script src="/src/client/app/widgets/ht-widget-header.directive.js"></script>
     <!-- endinject -->

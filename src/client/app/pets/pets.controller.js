@@ -11,7 +11,7 @@
 		var vm = this;
 		vm.title = 'Pets';
 		vm.pets = [];
-		
+
 		activate();
 		
 		function activate() {

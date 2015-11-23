@@ -11,7 +11,8 @@
         var service = {
             getPeople: getPeople,
             getMessageCount: getMessageCount,
-            getPets : getPets
+            getPets : getPets,
+            getAdmin : getAdmin
         };
 
         return service;
@@ -42,7 +43,22 @@
             }
             
             function fail(e){
-                return exception.catch('XHR Failed for getPEts')(e);
+                return exception.catcher('XHR Failed for getPets')(e);
+            }
+        }
+        
+        function getAdmin(id) {
+            return $http.get('/api/admin')
+                .then(success)
+                .catch(fail);
+                
+            function success(response){
+                console.log(response.data);
+                return response.data;
+            }
+            
+            function fail(e){
+                return exception.catcher('XHR Failed for admin')(e);
             }
         }
     }

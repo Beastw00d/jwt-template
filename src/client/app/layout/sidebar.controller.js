@@ -5,13 +5,14 @@
         .module('app.layout')
         .controller('SidebarController', SidebarController);
 
-    SidebarController.$inject = ['$state', 'routerHelper'];
+    SidebarController.$inject = ['$state', 'routerHelper', '$auth', '$rootScope'];
     /* @ngInject */
-    function SidebarController($state, routerHelper) {
+    function SidebarController($state, routerHelper, $auth, $rootScope) {
         var vm = this;
         var states = routerHelper.getStates();
         vm.isCurrent = isCurrent;
-
+        vm.authenticated = $auth.isAuthenticated();
+        
         activate();
 
         function activate() { getNavRoutes(); }
@@ -31,5 +32,9 @@
             var menuName = route.title;
             return $state.current.title.substr(0, menuName.length) === menuName ? 'current' : '';
         }
+        
+        $rootScope.$on("auth_changed", function () {
+            vm.authenticated = $auth.isAuthenticated();
+        });
     }
 })();

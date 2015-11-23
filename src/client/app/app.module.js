@@ -4,8 +4,12 @@
     angular.module('app', [
         'app.core',
         'app.widgets',
-        'app.admin',
         'app.pets',
-        'app.layout'
+        'app.register',
+        'app.layout',
+        'app.logout',
+        'app.admin',
+        'app.login'
+                
     ]);
 })();

@@ -2,7 +2,7 @@
 	'use strict';
 	
 	angular
-		.module('app.pets')
+		.module('app.login')
 		.run(appRun);
 		
 	appRun.$inject = ['routerHelper'];
@@ -14,16 +14,17 @@
 	function getStates() {
 		return [
 			{
-				state: 'pets',
+				state: 'login',
 				config: {
-					url: '/',
-					templateUrl: 'app/pets/pets.html',
-					controller: 'PetsController',
+					url: '/login',
+					templateUrl: 'app/login/login.html',
+					controller: 'LoginController',
 					controllerAs: 'vm',
-					title: 'Pets',
+					title: 'Login',
 					settings: {
-						nav: 1,
-						content: '<i class="fa fa-lock"></i>Pets'
+						nav: 3,
+						content: '<i class="fa fa-lock"></i>Login',
+						hideAuthenticated: true
 					}
 				}
 			}
