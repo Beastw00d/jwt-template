@@ -39,16 +39,12 @@
     function authConfig($httpProvider, $authProvider){
         $authProvider.loginUrl = '/api/login';
         $authProvider.signupUrl = '/api/register';
-        
-        // $authProvider.google({
-		//   clientId: '755194447289-i6qu5n18jnh4lhph17j19cq08i0fq6f4.apps.googleusercontent.com',
-		//   url: '/api/' + 'auth/google'
-	    // });
 
-	    // $authProvider.facebook({
-		//   clientId: '698580886903269',
-		//   url: '/api/' + 'auth/facebook'
-	    // });
+	    $authProvider.facebook({
+		  clientId: '1505087449785117',
+		  url: '/api/' + 'auth/facebook',
+          popupOptions: { width: 580, height: 400 }
+	    });
         
         
         $httpProvider.interceptors.push('authInterceptor');

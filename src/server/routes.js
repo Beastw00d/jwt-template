@@ -8,7 +8,6 @@ var Pet = require('./models/Pet');
 var User = require('./models/User');
 
 var admin = require('./services/admin.js');
-var googleAuth = require('./services/googleAuth.js');
 var facebookAuth = require('./services/facebookAuth.js');
 
 router.get('/people', getPeople);
@@ -18,7 +17,6 @@ router.get('/admin', admin);
 router.get('/*', four0four.notFoundMiddleware);
 router.post('/register', passport.authenticate('local-register'), register);
 router.post('/login', passport.authenticate('local-login'), login);
-router.post('/auth/google', googleAuth);
 router.post('/auth/facebook', facebookAuth);
 
 module.exports = router;

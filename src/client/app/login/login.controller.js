@@ -39,6 +39,7 @@
 			$auth.authenticate(provider).then(function (res) {
 				$rootScope.$emit( "auth_changed" );
 				logger.success('Thanks for coming back ' + res.data.user.displayName + '!');
+				$state.go('admin');
 			}, handleError);
 		}
 		
