@@ -22,11 +22,11 @@
 					title: 'Register',
 					settings: {
 						nav: 5,
-						content: '<i class="fa fa-lock"></i>Register',
+						content: 'Register',
 						hideAuthenticated: true
 					}
 				}
 			}
-		]
+		];
 	}
 })();

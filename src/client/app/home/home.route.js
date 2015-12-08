@@ -2,7 +2,7 @@
 	'use strict';
 	
 	angular
-		.module('app.logout')
+		.module('app.home')
 		.run(appRun);
 		
 	appRun.$inject = ['routerHelper'];
@@ -14,16 +14,17 @@
 	function getStates() {
 		return [
 			{
-				state: 'logout',
+				state: 'home',
 				config: {
 					url: '/',
-					controller: 'LogoutController',
+					templateUrl: 'app/home/home.html',
+					controller: 'HomeController',
 					controllerAs: 'vm',
-					title: 'Logout',
+					title: 'Home',
 					settings: {
-						nav: 4,
-						content: '<i class="fa fa-lock"></i>Logout',
-						hideUnauthenticated: true
+						nav: 5,
+						//content: '<i class="fa fa-lock"></i>Home',
+						content: '<div>Home</div>',
 					}
 				}
 			}

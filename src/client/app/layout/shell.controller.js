@@ -12,16 +12,11 @@
         vm.busyMessage = 'Please wait ...';
         vm.isBusy = true;
         $rootScope.showSplash = true;
-        vm.navline = {
-            title: config.appTitle,
-            text: 'Created by Chris Eastwood',
-            link: 'http://twitter.com/chrisBeastwood'
-        };
 
         activate();
 
         function activate() {
-            logger.success(config.appTitle + ' loaded!', null);
+            //logger.success(config.appTitle + ' loaded!', null);
             hideSplash();
         }
 

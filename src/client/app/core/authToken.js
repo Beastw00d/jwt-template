@@ -1,5 +1,5 @@
 (function () {
-	'use strict'
+	'use strict';
 	
 	angular.module('app.core')
 		.factory('authToken', authToken);
@@ -31,7 +31,7 @@
 				storage.removeItem(userToken);
 				isAuthenticated = false;
 			}
-		}
+		};
 		
 		return token;
 	}

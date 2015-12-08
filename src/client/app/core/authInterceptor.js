@@ -19,6 +19,6 @@
 			response: function(response) {
 				return response;
 			}
-		}
+		};
 	}
 })();

@@ -9,9 +9,8 @@
     /* @ngInject */
     function dataservice($http, $q, exception, logger) {
         var service = {
-            getPeople: getPeople,
+            //getPeople: getPeople,
             getMessageCount: getMessageCount,
-            getPets : getPets,
             getAdmin : getAdmin
         };
 
@@ -30,20 +29,6 @@
 
             function fail(e) {
                 return exception.catcher('XHR Failed for getPeople')(e);
-            }
-        }
-        
-        function getPets() {
-            return $http.get('/api/pets')
-                .then(success)
-                .catch(fail);
-                
-            function success(response) {
-                return response.data;
-            }
-            
-            function fail(e){
-                return exception.catcher('XHR Failed for getPets')(e);
             }
         }
         

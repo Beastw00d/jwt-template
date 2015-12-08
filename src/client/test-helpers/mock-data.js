@@ -2,20 +2,21 @@
 var mockData = (function() {
     return {
         getMockPeople: getMockPeople,
-        getMockStates: getMockStates
+        getMockStates: getMockStates,
+        getMockAdmin: getMockAdmin
     };
 
     function getMockStates() {
         return [
             {
-                state: 'pets',
+                state: 'Login',
                 config: {
                     url: '/',
-                    templateUrl: 'app/pets/pets.html',
-                    title: 'dashboard',
+                    templateUrl: 'app/login/login.html',
+                    title: 'Login',
                     settings: {
                         nav: 1,
-                        content: '<i class="fa fa-dashboard"></i> Dashboard'
+                        content: '<i class="fa fa-login"></i> Login'
                     }
                 }
             }
@@ -34,10 +35,9 @@ var mockData = (function() {
         ];
     }
     
-    function getMockPets(){
-        return [
-            {name: 'Sparky', location: 'Buckhead'},
-            {name: 'Doggy', location: 'West-Midtown'}
-        ];
+    function getMockAdmin() {
+        return {
+            id: 0
+        };
     }
 })();

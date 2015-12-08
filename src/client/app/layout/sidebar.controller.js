@@ -33,7 +33,7 @@
             return $state.current.title.substr(0, menuName.length) === menuName ? 'current' : '';
         }
         
-        $rootScope.$on("auth_changed", function () {
+        $rootScope.$on('auth_changed', function () {
             vm.authenticated = $auth.isAuthenticated();
         });
     }

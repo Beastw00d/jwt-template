@@ -16,7 +16,7 @@
         function activate() {
 			var promises = [getAdmin()];
 			return $q.all(promises).then(function() {
-				logger.info('Activated Admin View');
+				// logger.info('Activated Admin View');
 			});
 			
 		 }

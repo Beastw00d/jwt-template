@@ -49,7 +49,4 @@
         
         $httpProvider.interceptors.push('authInterceptor');
     }
-    
-    core.config
-
 })();

@@ -24,12 +24,11 @@ passport.serializeUser(function (user, done) {
 passport.use('local-register', localStrategy.register);
 passport.use('local-login', localStrategy.login);
 
-
 app.use(function(req, res, next) {
-	   res.header('Access-Control-Allow-Origin', '*');
-	   res.header('Access-Control-Allow-Methods', 'GET,PUT,POST,DELETE');
-   	   res.header('Access-Control-Allow-Headers', 'Content-Type, Authorization');
-	   next();
+	res.header('Access-Control-Allow-Origin', '*');
+    res.header('Access-Control-Allow-Methods', 'GET,PUT,POST,DELETE');
+   	res.header('Access-Control-Allow-Headers', 'Content-Type, Authorization');
+    next();
 });
 app.use(favicon(__dirname + '/favicon.ico'));
 app.use(bodyParser.urlencoded({extended: true}));
@@ -82,9 +81,9 @@ function connectToDB(isDev /* is dev environment */) {
     var connectionString = '';
     console.log('** Connecting to the database');
     if (isDev) {
-        connectionString = 'mongodb://admin:snotfalls@ds049104.mongolab.com:49104/pets';
+        connectionString = 'mongodb://localhost:27017/users';
     } else {
-        connectionString = 'mongodb://admin:snotfalls@ds049104.mongolab.com:49104/pets';
+        connectionString = 'mongodb://localhost:27017/users';
     }
     mongoose.connect(connectionString);
 }

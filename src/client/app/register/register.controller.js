@@ -13,12 +13,11 @@
 		vm.user = {};
 		
 		vm.register = register;
+		vm.authenticate = authenticate;
 		
 		activate();
 		
-		function activate() {
-			logger.info('Activated Register View');
-		}
+		function activate() {}
 		
 		function register() {
 			$auth.signup({
@@ -27,13 +26,24 @@
 			}).then(function (res) {
 				$auth.setToken(res.data.token);
 				logger.success('Account Created! Welcome ' + res.data.user.email + '!');
-				$rootScope.$emit( "auth_changed" );
+				$rootScope.$emit( 'auth_changed' );
 				$state.go('admin');
 			}).catch(function (err) {
 				logger.error('Unable to create account :( ' + err.message);
 			});
 		}
 		
+		function authenticate(provider) {
+			$auth.authenticate(provider).then(function (res) {
+				$rootScope.$emit( 'auth_changed' );
+				logger.success('Thanks for coming back ' + res.data.user.displayName + '!');
+				$state.go('admin');
+			}, handleError);
+		}
+		
+		function handleError(err) {
+			logger.error('Something went wrong ' + err.message);
+		}
 		
 		
 	}

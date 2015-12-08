@@ -12,8 +12,8 @@
 			link: function (scope, element, attrs, ctrl) {
 				ctrl.$validators.match = function (moduleValue, viewValue) {
 					return viewValue === scope.password;
-				}
+				};
 			}
-		}
+		};
 	}
 })();

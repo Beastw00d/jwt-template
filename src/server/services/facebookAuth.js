@@ -1,3 +1,4 @@
+/* jshint -W106 */
 var request = require('request');
 var qs = require('querystring');
 var createSendToken = require('./jwt.js');
@@ -42,4 +43,4 @@ module.exports = function (req, res, next) {
 			});
 		});
 	});
-}
+};

@@ -1,29 +1,27 @@
 /* jshint -W117, -W030 */
-describe('AdminController', function() {
+describe('RegisterController', function() {
     var controller;
-    var admin = mockData.getMockAdmin();
-    
+
     beforeEach(function() {
-        bard.appModule('app.admin');
-        bard.inject('$controller', '$log', '$rootScope', 'dataservice', '$q');
+        bard.appModule('app.register');
+        bard.inject('$controller', '$log', '$rootScope');
     });
 
     beforeEach(function () {
-        sinon.stub(dataservice, 'getAdmin').returns($q.when(admin));
-        controller = $controller('AdminController');
+        controller = $controller('RegisterController');
         $rootScope.$apply();
     });
 
     bard.verifyNoOutstandingHttpRequests();
 
-    describe('Admin controller', function() {
+    describe('Register controller', function() {
         it('should be created successfully', function () {
             expect(controller).to.be.defined;
         });
 
         describe('after activate', function() {
             it('should have title of Admin', function() {
-                expect(controller.title).to.equal('Admin');
+                expect(controller.title).to.equal('Register');
             });
 
             // it('should have logged "Activated"', function() {

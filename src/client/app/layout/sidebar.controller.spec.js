@@ -3,7 +3,7 @@ describe('layout', function() {
     describe('sidebar', function() {
         var controller;
         var views = {
-            pets: 'app/pets/pets.html'
+            login: 'app/login/login.html'
         };
 
         beforeEach(function() {
@@ -25,8 +25,8 @@ describe('layout', function() {
             expect(controller.isCurrent($state.current)).to.equal('current');
         });
         
-         it('should have isCurrent() for /pets to return `current`', function() {
-            $location.path('/pets');
+         it('should have isCurrent() for /login to return `current`', function() {
+            $location.path('/login');
             expect(controller.isCurrent($state.current)).to.equal('current');
         });
 

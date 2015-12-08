@@ -1,3 +1,4 @@
+/* jshint -W116 */
 var User = require('../models/User.js');
 var LocalStrategy = require('passport-local').Strategy;
 
@@ -15,14 +16,14 @@ exports.login = new LocalStrategy(strategyOptions, function(email, password, don
 		if (err) return done(err);
 		
 		if(!user) return done(null, false, {
-			description: 'Wrong email/password'
+			message: 'Wrong email/password'
 		});
 		
 		user.comparePasswords(password, function (err, isMatch) {
 			if (err) return done(err);
 			
 			if(!isMatch) return done(null, false, {
-				description: 'Wrong email/password'
+				message: 'Wrong email/password'
 			});
 			
 			return done(null, user);
@@ -39,7 +40,7 @@ exports.register = new LocalStrategy(strategyOptions, function (email, password,
 		if (err) return done(err);
 		
 		if (user) return done(null, false, {
-			description: 'email already exists'
+			message: 'email already exists'
 		});
 		
 		var newUser = new User({

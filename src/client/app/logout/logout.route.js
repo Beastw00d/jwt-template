@@ -2,7 +2,7 @@
 	'use strict';
 	
 	angular
-		.module('app.pets')
+		.module('app.logout')
 		.run(appRun);
 		
 	appRun.$inject = ['routerHelper'];
@@ -14,16 +14,16 @@
 	function getStates() {
 		return [
 			{
-				state: 'pets',
+				state: 'logout',
 				config: {
-					url: '/',
-					templateUrl: 'app/pets/pets.html',
-					controller: 'PetsController',
+					url: '/logout',
+					controller: 'LogoutController',
 					controllerAs: 'vm',
-					title: 'Pets',
+					title: 'Logout',
 					settings: {
-						nav: 1,
-						content: '<i class="fa fa-lock"></i>Pets'
+						nav: 4,
+						content: 'Logout',
+						hideUnauthenticated: true
 					}
 				}
 			}
