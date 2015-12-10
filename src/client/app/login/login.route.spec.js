@@ -12,7 +12,7 @@ describe('login routes', function () {
             $templateCache.put(view, '');
         });
 
-        it('should map state admin to url /login ', function() {
+        it('should map state login to url /login ', function() {
             expect($state.href('login', {})).to.equal('/login');
         });
 

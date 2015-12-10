@@ -21,7 +21,7 @@
 					controllerAs: 'vm',
 					title: 'Register',
 					settings: {
-						nav: 5,
+						nav: 4,
 						content: 'Register',
 						hideAuthenticated: true
 					}

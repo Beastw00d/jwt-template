@@ -22,7 +22,7 @@
 					controllerAs: 'vm',
 					title: 'Home',
 					settings: {
-						nav: 5,
+						nav: 1,
 						//content: '<i class="fa fa-lock"></i>Home',
 						content: '<div>Home</div>',
 					}

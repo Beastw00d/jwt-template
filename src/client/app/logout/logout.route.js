@@ -21,7 +21,7 @@
 					controllerAs: 'vm',
 					title: 'Logout',
 					settings: {
-						nav: 4,
+						nav: 5,
 						content: 'Logout',
 						hideUnauthenticated: true
 					}

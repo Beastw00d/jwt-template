@@ -8,6 +8,7 @@
 	/* ngInject */
 	function HomeController(logger){
 		var vm = this;
+		vm.title = "Home";
 		
 		activate();
 		
